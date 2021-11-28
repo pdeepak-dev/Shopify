@@ -10,10 +10,10 @@ namespace Catalog.API.Data
         public static void SeedData(IMongoCollection<Product> productCollection)
         {
             if (!productCollection.Find(p => true).Any())
-                productCollection.InsertManyAsync(GetPreconfiguredProducts());
+                productCollection.InsertManyAsync(GetPreConfiguredProducts());
         }
 
-        private static IEnumerable<Product> GetPreconfiguredProducts()
+        private static IEnumerable<Product> GetPreConfiguredProducts()
             =>
             new List<Product>()
             {

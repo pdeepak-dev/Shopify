@@ -4,6 +4,7 @@ using Catalog.API.Data;
 using Catalog.API.Entities;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Catalog.API.Infrastructure;
 
 namespace Catalog.API.Repositories
 {
@@ -25,7 +26,7 @@ namespace Catalog.API.Repositories
         private readonly ICatalogContext _context;
 
         public ProductRepository(ICatalogContext context)
-            => _context = context ?? throw new ArgumentNullException(nameof(context));
+            => _context = context ?? throw new CatalogContextException($"{nameof(ICatalogContext)} is not provided");
 
         public async Task<IEnumerable<Product>> GetProductsAsync()
             => await _context.Products.Find(p => true).ToListAsync();

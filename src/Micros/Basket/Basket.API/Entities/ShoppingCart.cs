@@ -11,14 +11,14 @@ namespace Basket.API.Entities
         public ShoppingCart(string userName) => UserName = userName;
 
         public string UserName { get; set; }
-        public List<ShoppingCartItem> ShoppingCartItems { get; set; } = new List<ShoppingCartItem>();
+        public List<ShoppingCartItem> Items { get; set; } = new List<ShoppingCartItem>();
 
         public decimal TotalPrice
         {
             get
             {
                 decimal totalPrice = 0.0m;
-                ShoppingCartItems.ForEach(x =>
+                Items.ForEach(x =>
                 {
                     totalPrice += x.Price * x.Quantity;
                 });

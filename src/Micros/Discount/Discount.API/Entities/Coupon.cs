@@ -1,6 +1,6 @@
 ﻿namespace Discount.API.Entities
 {
-    public class Discount
+    public class Coupon
     {
         public int Id { get; set; }
         public string ProductName { get; set; }

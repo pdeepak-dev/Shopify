@@ -34,6 +34,7 @@ services:
       - catalogdb
     ports:
       - "8000:80"
+
   basket.api:
     container_name: basketapi
     environment:

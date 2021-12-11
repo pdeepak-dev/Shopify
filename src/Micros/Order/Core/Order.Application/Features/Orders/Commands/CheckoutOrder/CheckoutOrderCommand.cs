@@ -1,8 +1,8 @@
-﻿using Order.Domain.Common;
+﻿using MediatR;
 
-namespace Order.Domain.Entities
+namespace Order.Application.Features.Orders.Commands.CheckoutOrder
 {
-    public class OrderEntity : EntityBase
+    public class CheckoutOrderCommand : IRequest<int>
     {
         public string UserName { get; set; }
         public decimal Price { get; set; }

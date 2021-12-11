@@ -1,9 +1,15 @@
-﻿using Order.Domain.Common;
+﻿using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Order.Domain.Entities
+namespace Order.Application.Features.Orders.Commands.UpdateOrder
 {
-    public class OrderEntity : EntityBase
+    public class UpdateOrderCommand : IRequest
     {
+        public int Id { get; set; }
         public string UserName { get; set; }
         public decimal Price { get; set; }
 

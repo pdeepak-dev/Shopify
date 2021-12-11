@@ -1,6 +1,6 @@
-﻿using Order.Application.Common;
+﻿using Order.Domain.Common;
 
-namespace Order.Application.Entities
+namespace Order.Domain.Entities
 {
     public class Order : EntityBase
     {

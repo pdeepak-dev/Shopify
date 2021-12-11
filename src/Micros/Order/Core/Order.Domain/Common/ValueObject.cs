@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Order.Application.Common
+namespace Order.Domain.Common
 {
     // Learn more: https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/implement-value-objects
     public abstract class ValueObject

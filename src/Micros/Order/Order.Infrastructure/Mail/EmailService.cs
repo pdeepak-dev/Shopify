@@ -8,14 +8,9 @@ namespace Order.Infrastructure.Mail
 {
     public class EmailService : IEmailService
     {
-        private readonly EmailSettings settings;
         private readonly ILogger<EmailService> logger;
 
-        public EmailService(EmailSettings settings, ILogger<EmailService> logger)
-        {
-            this.settings = settings ?? throw new ArgumentNullException(nameof(settings));
-            this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        }
+        public EmailService(ILogger<EmailService> logger) => this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
         public async Task<bool> SendEmail(Email email)
         {

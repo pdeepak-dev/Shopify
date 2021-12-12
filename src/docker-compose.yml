@@ -43,6 +43,12 @@ services:
       context: .
       dockerfile: Micros/Discount/Discount.Grpc/Dockerfile
 
+  order.api:
+    image: ${DOCKER_REGISTRY-}orderapi
+    build:
+      context: .
+      dockerfile: Micros/Order/Order.API/Dockerfile
+
 volumes:
   mongo_data:
   portainer_data:

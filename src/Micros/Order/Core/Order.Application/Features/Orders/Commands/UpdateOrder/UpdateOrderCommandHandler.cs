@@ -14,9 +14,9 @@ namespace Order.Application.Features.Orders.Commands.UpdateOrder
     {
         private readonly IOrderRepository _orderRepo;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<UpdateOrderCommandHandler> _logger;
 
-        public UpdateOrderCommandHandler(IOrderRepository orderRepo, IMapper mapper, ILogger logger)
+        public UpdateOrderCommandHandler(IOrderRepository orderRepo, IMapper mapper, ILogger<UpdateOrderCommandHandler> logger)
         {
             _orderRepo = orderRepo ?? throw new ArgumentNullException(nameof(orderRepo));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

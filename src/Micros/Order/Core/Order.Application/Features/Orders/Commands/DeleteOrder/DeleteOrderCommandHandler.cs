@@ -13,9 +13,9 @@ namespace Order.Application.Features.Orders.Commands.DeleteOrder
     {
         private readonly IOrderRepository _orderRepo;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<DeleteOrderCommandHandler> _logger;
 
-        public DeleteOrderCommandHandler(IOrderRepository orderRepo, IMapper mapper, ILogger logger)
+        public DeleteOrderCommandHandler(IOrderRepository orderRepo, IMapper mapper, ILogger<DeleteOrderCommandHandler> logger)
         {
             _orderRepo = orderRepo ?? throw new ArgumentNullException(nameof(orderRepo));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

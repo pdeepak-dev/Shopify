@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MassTransit;
+using EventBus.Messages.Common;
+using Order.API.EventBusConsumer;
 
 namespace Order.API
 {
@@ -28,8 +31,28 @@ namespace Order.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Order.API", Version = "v1" });
             });
 
+            services.AddAutoMapper(typeof(Startup));
             services.AddApplicationServices();
             services.AddInfrastructureServices(Configuration);
+
+            services.AddMassTransit(cfg =>
+            {
+                cfg.AddConsumer<BasketCheckoutConsumer>();
+
+                cfg.UsingRabbitMq((ctx, cfgtr) =>
+                {
+                    cfgtr.Host(Configuration["EventBusSettings:HostAddress"]);
+
+                    cfgtr.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueue, c =>
+                    {
+                        c.ConfigureConsumer<BasketCheckoutConsumer>(ctx);
+                    });
+                });
+            });
+
+            services.AddMassTransitHostedService();
+
+            services.AddScoped<BasketCheckoutConsumer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

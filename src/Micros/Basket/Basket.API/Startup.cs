@@ -8,6 +8,7 @@ using Basket.API.Repositories;
 using Basket.API.GrpcServices;
 using Discount.Grpc.Protos;
 using System;
+using MassTransit;
 
 namespace Basket.API
 {
@@ -41,6 +42,18 @@ namespace Basket.API
 
             services
                 .AddScoped<IDiscountGrpcService, DiscountGrpcService>();
+
+            services.AddMassTransit(cfg =>
+            {
+                cfg.UsingRabbitMq((ctx, cfgtr) =>
+                {
+                    cfgtr.Host(Configuration["EventBusSettings:HostAddress"]);
+                });
+            });
+
+            services.AddMassTransitHostedService();
+
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

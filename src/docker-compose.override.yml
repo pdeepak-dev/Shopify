@@ -118,3 +118,9 @@ services:
     depends_on:
       - orderdb
       - rabbitmq
+  ocelotapigw:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+

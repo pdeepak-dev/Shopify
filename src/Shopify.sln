@@ -41,7 +41,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotApiGw", "ApiGateways\OcelotApiGw\OcelotApiGw.csproj", "{5B2275E3-E1AF-4CD3-827B-11645A9631F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Aggregator", "ApiGateways\Shopping.Aggregator\Shopping.Aggregator.csproj", "{439130DE-F6CE-48BE-9D9F-A85A87CF3D31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shopping.Aggregator", "ApiGateways\Shopping.Aggregator\Shopping.Aggregator.csproj", "{439130DE-F6CE-48BE-9D9F-A85A87CF3D31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{B0950389-0649-4F25-A94F-512E602AA3C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetRunBasics", "WebApps\AspnetRunBasics\AspnetRunBasics.csproj", "{FFCD7604-D189-492F-BB0C-58D27726B93E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -197,6 +201,18 @@ Global
 		{439130DE-F6CE-48BE-9D9F-A85A87CF3D31}.Release|x64.Build.0 = Release|Any CPU
 		{439130DE-F6CE-48BE-9D9F-A85A87CF3D31}.Release|x86.ActiveCfg = Release|Any CPU
 		{439130DE-F6CE-48BE-9D9F-A85A87CF3D31}.Release|x86.Build.0 = Release|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Debug|x64.Build.0 = Debug|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Debug|x86.Build.0 = Debug|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Release|x64.ActiveCfg = Release|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Release|x64.Build.0 = Release|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Release|x86.ActiveCfg = Release|Any CPU
+		{FFCD7604-D189-492F-BB0C-58D27726B93E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -218,6 +234,7 @@ Global
 		{E2C3AFA6-BBBD-4DE6-B41E-D1FE81CA7211} = {1D8705C1-EE90-421E-A2DD-30989337ADFC}
 		{5B2275E3-E1AF-4CD3-827B-11645A9631F1} = {C4AA643B-EACA-454E-8D89-0D92A19BC4AE}
 		{439130DE-F6CE-48BE-9D9F-A85A87CF3D31} = {C4AA643B-EACA-454E-8D89-0D92A19BC4AE}
+		{FFCD7604-D189-492F-BB0C-58D27726B93E} = {B0950389-0649-4F25-A94F-512E602AA3C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9742F169-4AAF-48A6-8C69-278AE7811880}
